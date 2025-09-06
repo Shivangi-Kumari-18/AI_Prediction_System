@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./ForgotPassword.css";
 
 const ForgotPassword = () => {
   const [step, setStep] = useState(1);
@@ -52,12 +53,10 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-100 via-blue-100 to-indigo-100">
-      <div className="bg-white/80 backdrop-blur-lg shadow-xl rounded-2xl p-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center text-gray-800">
-          Forgot Password
-        </h2>
-        <div className="mt-6 space-y-4">
+    <div className="forgot-page">
+      <div className="forgot-box">
+        <h2>Forgot Password</h2>
+        <div className="forgot-form">
           {step === 1 && (
             <>
               <input
@@ -65,14 +64,8 @@ const ForgotPassword = () => {
                 placeholder="Enter registered email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
               />
-              <button
-                onClick={handleSendOTP}
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:scale-105 transition"
-              >
-                Send OTP
-              </button>
+              <button onClick={handleSendOTP}>Send OTP</button>
             </>
           )}
 
@@ -83,14 +76,8 @@ const ForgotPassword = () => {
                 placeholder="Enter OTP"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
               />
-              <button
-                onClick={handleVerifyOTP}
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:scale-105 transition"
-              >
-                Verify OTP
-              </button>
+              <button onClick={handleVerifyOTP}>Verify OTP</button>
             </>
           )}
 
@@ -101,19 +88,12 @@ const ForgotPassword = () => {
                 placeholder="Enter new password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-indigo-500 outline-none"
               />
-              <button
-                onClick={handleResetPassword}
-                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:scale-105 transition"
-              >
-                Reset Password
-              </button>
+              <button onClick={handleResetPassword}>Reset Password</button>
             </>
           )}
-          {message && (
-            <p className="text-center text-sm text-red-600">{message}</p>
-          )}
+
+          {message && <p className="message">{message}</p>}
         </div>
       </div>
     </div>

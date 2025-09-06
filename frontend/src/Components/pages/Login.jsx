@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./Login.css"; // 👈 normal CSS import
+import "./Login.css";
 
 const Login = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false); // modal state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+
+  // Auto-open modal on page load
+  useEffect(() => {
+    setOpen(true);
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,24 +29,14 @@ const Login = () => {
 
   return (
     <div>
-      {/* Trigger Button */}
-      <button onClick={() => setOpen(true)} className="login-btn">
-        Login
-      </button>
-
       {/* Modal */}
       {open && (
         <div className="modal-overlay">
           <div className="modal-box">
-            {/* Close Button */}
             <button onClick={() => setOpen(false)} className="modal-close">
               ✖
             </button>
-
-            {/* Title */}
             <h2 className="modal-title">Login</h2>
-
-            {/* Form */}
             <form className="modal-form" onSubmit={handleLogin}>
               <div>
                 <label>Email</label>
@@ -70,8 +65,6 @@ const Login = () => {
                 Login
               </button>
             </form>
-
-            {/* Links */}
             <p className="modal-footer">
               <Link to="/forgot-password">Forgot Password?</Link> |{" "}
               <Link to="/signup">Sign Up</Link>

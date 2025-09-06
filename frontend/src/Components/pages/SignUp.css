@@ -1,13 +1,13 @@
-.forgot-page {
+.signup-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #e0c3fc, #8ec5fc, #d1d4f9);
+  background: linear-gradient(to bottom right, #bfdbfe, #e0e7ff, #ede9fe);
 }
 
-.forgot-box {
-  background: rgba(255, 255, 255, 0.85);
+.signup-box {
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 20px;
@@ -19,43 +19,37 @@
   gap: 1rem;
 }
 
-.forgot-box h2 {
+.signup-box h2 {
   text-align: center;
   font-size: 1.8rem;
   color: #1f2937;
   margin-bottom: 1rem;
 }
 
-.forgot-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.forgot-form input {
+.signup-box input {
   padding: 0.8rem;
   border-radius: 10px;
   border: 1px solid #ccc;
   outline: none;
 }
 
-.forgot-form input:focus {
+.signup-box input:focus {
   border-color: #6366f1;
   box-shadow: 0 0 5px #6366f1;
 }
 
-.forgot-form button {
+.signup-box button {
   padding: 0.8rem;
   border: none;
   border-radius: 10px;
-  background: linear-gradient(90deg, #4f46e5, #7e5bef);
+  background: linear-gradient(90deg, #7e5bef, #4f46e5);
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s;
 }
 
-.forgot-form button:hover {
+.signup-box button:hover {
   transform: scale(1.05);
 }
 
