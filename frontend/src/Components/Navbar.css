@@ -1,0 +1,115 @@
+/* Navbar base */
+.navbar {
+  background: linear-gradient(to right, #4f46e5, #9333ea, #ec4899);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+.navbar-logo span {
+  color: #facc15; /* yellow-300 */
+}
+
+/* Desktop Menu */
+.navbar-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.navbar-link:hover {
+  color: #facc15;
+}
+
+/* Login Button */
+.navbar-login {
+  background: #facc15;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.navbar-login:hover {
+  background: #fde047;
+}
+
+/* Hamburger (hidden by default on desktop) */
+.hamburger {
+  font-size: 1.8rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  background: linear-gradient(to right, #4f46e5, #9333ea, #ec4899);
+  transition: max-height 0.4s ease-in-out;
+}
+.mobile-menu.open {
+  max-height: 400px; /* adjust if menu items increase */
+}
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  list-style: none;
+}
+.mobile-menu-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.mobile-login {
+  background: #facc15;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none; /* 👈 mobile par hide */
+  }
+  .hamburger {
+    display: block; /* 👈 mobile par show */
+  }
+}

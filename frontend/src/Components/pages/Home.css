@@ -1,0 +1,80 @@
+/* Main container */
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom right, #eff6ff, #ffffff, #f5f3ff);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Title */
+.home-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1f2937; /* gray-800 */
+}
+
+@media (min-width: 768px) {
+  .home-title {
+    font-size: 3rem;
+  }
+}
+
+/* Subtitle */
+.home-subtitle {
+  margin-top: 1rem;
+  max-width: 700px;
+  color: #4b5563; /* gray-600 */
+  font-size: 1.125rem;
+}
+
+/* Button group */
+.home-buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Primary button */
+.btn-primary {
+  background: linear-gradient(to right, #2563eb, #4f46e5);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* Secondary button */
+.btn-secondary {
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+  background: transparent;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: #eef2ff;
+}
+
+/* Feature section */
+.home-features {
+  margin-top: 2.5rem;
+  width: 100%;
+}
