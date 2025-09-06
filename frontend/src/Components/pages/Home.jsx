@@ -1,5 +1,7 @@
 import React from "react";
 import FeatureBox from "../../Components/FeatureBox";
+import About from "./About";
+import Contact from "./Contact";
 import "./Home.css"; // 👈 normal CSS import
 
 export default function Home() {
@@ -16,6 +18,8 @@ export default function Home() {
       </div>
       <div className="home-features">
         <FeatureBox />
+        <About />
+        <Contact />
       </div>
     </div>
   );

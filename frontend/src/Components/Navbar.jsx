@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="navbar-inner">
           {/* Logo */}
           <div className="navbar-logo">
-            Edu<span>Guard</span>
+            AI<span>Prediction</span>
           </div>
 
           {/* Desktop Menu */}
