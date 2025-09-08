@@ -1,79 +1,101 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+import { useAuth } from "../../context/AuthContext";
 
-const Login = () => {
-  const [open, setOpen] = useState(false); // modal state
+export default function Login() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL;
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
-  // Auto-open modal on page load
-  useEffect(() => {
-    setOpen(true);
-  }, []);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setMessage("");
+
+    if (!API_URL) return setMessage("API URL not configured (VITE_API_URL)");
+
+    if (!email || !password) {
+      setMessage("Please enter email and password.");
+      return;
+    }
+
     try {
-      const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/auth/login`,
-        { email, password }
-      );
-      setMessage("Login successful ✅");
+      setIsLoading(true);
+      const res = await axios.post(`${API_URL}/auth/login`, {
+        email,
+        password,
+      });
+      const data = res?.data || {};
+      console.log("🔑 Login response:", data);
+      if (data.success) {
+        // store token and user in context (and localStorage via AuthContext.login)
+        login({ token: data.token, user: data.user });
+        setMessage(data.msg || "Login successful ✅");
+        navigate("/home", { replace: true });
+      } else {
+        // handle non-success responses (user not found vs invalid password)
+        const msg = data.msg || "Login failed ❌ Please try again";
+        setMessage(msg);
+
+        const lowered = String(msg).toLowerCase();
+        if (
+          lowered.includes("not found") ||
+          lowered.includes("no user") ||
+          lowered.includes("doesn't exist")
+        ) {
+          // let user read message
+          setTimeout(() => navigate("/signup", { replace: true }), 1200);
+        }
+        // if message includes "invalid password" or "wrong password", stay on login (message shown)
+      }
     } catch (err) {
-      setMessage(err.response?.data?.msg || "Login failed ❌");
+      console.error("Login error:", err);
+      const errMsg =
+        err?.response?.data?.msg || err?.message || "Login failed ❌";
+      setMessage(errMsg);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div>
-      {/* Modal */}
-      {open && (
-        <div className="modal-overlay">
-          <div className="modal-box">
-            <button onClick={() => setOpen(false)} className="modal-close">
-              ✖
-            </button>
-            <h2 className="modal-title">Login</h2>
-            <form className="modal-form" onSubmit={handleLogin}>
-              <div>
-                <label>Email</label>
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="modal-input"
-                  required
-                />
-              </div>
-              <div>
-                <label>Password</label>
-                <input
-                  type="password"
-                  placeholder="Enter your password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="modal-input"
-                  required
-                />
-              </div>
-              {message && <p className="modal-message">{message}</p>}
-              <button type="submit" className="modal-submit">
-                Login
-              </button>
-            </form>
-            <p className="modal-footer">
-              <Link to="/forgot-password">Forgot Password?</Link> |{" "}
-              <Link to="/signup">Sign Up</Link>
-            </p>
-          </div>
-        </div>
-      )}
+    <div className="login-page">
+      <div className="login-box">
+        <h2>Login</h2>
+        <form onSubmit={handleLogin}>
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          {message && <p className="modal-message">{message}</p>}
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Logging in..." : "Login"}
+          </button>
+        </form>
+
+        <p className="login-links">
+          <Link to="/forgot-password">Forgot Password?</Link> |{" "}
+          <Link to="/signup">Sign Up</Link>
+        </p>
+      </div>
     </div>
   );
-};
-
-export default Login;
+}
