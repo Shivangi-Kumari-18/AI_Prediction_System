@@ -73,6 +73,10 @@ export default function ForgotPassword() {
       setIsLoading(false);
     }
   };
+  const handleResend = async () => {
+    if (resendTimer > 0) return;
+    await handleSendOTP();
+  };
 
   const handleResetPassword = async (e) => {
     if (e && e.preventDefault) e.preventDefault();
@@ -88,19 +92,12 @@ export default function ForgotPassword() {
         newPassword,
       });
       const data = res?.data || {};
-      try {
-        const res = await axios.post(`${API_URL}/auth/reset-password`, {
-          email,
-          otp,
-          newPassword,
-        });
-        if (res.data.success) {
-          navigate("/login", { replace: true }); // redirect immediately
-        } else {
-          setMessage(res.data.msg || "Reset failed");
-        }
-      } catch (err) {
-        setMessage(err.response?.data?.msg || "Error resetting password");
+
+      if (data.success || data.msg?.includes("successful")) {
+        setMessage(data.msg || "Password reset successful ✅");
+        navigate("/login", { replace: true }); // redirect to login
+      } else {
+        setMessage(data.msg || "Password reset failed ❌");
       }
     } catch (err) {
       console.error("reset password error:", err);
@@ -112,11 +109,6 @@ export default function ForgotPassword() {
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const handleResend = async () => {
-    if (resendTimer > 0) return;
-    await handleSendOTP();
   };
 
   return (

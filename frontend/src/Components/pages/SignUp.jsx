@@ -35,7 +35,7 @@ export default function SignUp() {
       const data = res?.data || {};
       console.log("Signup response:", data);
 
-      if (data.success) {
+      if (data.msg?.includes("Signup successful")) {
         navigate("/login", { replace: true }); // redirect immediately
       } else {
         setMessage(data.msg || "Signup failed ❌");

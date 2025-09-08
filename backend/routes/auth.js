@@ -28,7 +28,12 @@ router.post("/register", async (req, res) => {
     });
 
     await newUser.save();
-    res.json({ msg: "Signup successful ✅", user: { name, email } });
+
+    res.json({
+      success: true, // ✅ add this
+      msg: "Signup successful ✅",
+      user: { name, email },
+    });
   } catch (err) {
     res.status(500).json({ msg: err.message });
   }
@@ -162,7 +167,10 @@ router.post("/verify-otp", async (req, res) => {
     if (user.resetOTPExpiry < Date.now())
       return res.status(400).json({ msg: "OTP expired" });
 
-    res.json({ msg: "OTP verified successfully" });
+    res.json({
+      success: true, // ✅ add this
+      msg: "Password reset successful ✅",
+    });
   } catch (err) {
     res.status(500).json({ msg: err.message });
   }
