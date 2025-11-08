@@ -1,0 +1,60 @@
+.fee-payment-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fee-summary-card, .payment-form, .payment-history {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f0f4f8;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.fee-summary-card p {
+  margin: 0.5rem 0;
+}
+
+.payment-form input, .payment-form select {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.payment-form button {
+  padding: 0.7rem 1.2rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.payment-form button:hover {
+  background-color: #45a049;
+}
+
+.payment-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payment-history th, .payment-history td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.payment-history th {
+  background-color: #e0e7ff;
+}
+
+.payment-history tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}

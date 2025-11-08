@@ -1,0 +1,173 @@
+/* .attendance-container {
+  padding: 20px;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.attendance-table th,
+.attendance-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.att-btn {
+  margin: 3px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.att-btn.present {
+  background: #4caf50;
+  color: white;
+}
+.att-btn.absent {
+  background: #f44336;
+  color: white;
+}
+.att-btn.leave {
+  background: #ff9800;
+  color: white;
+}
+
+.att-btn.active {
+  border: 2px solid black;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.status-badge.present {
+  background: #d4edda;
+  color: #155724;
+}
+.status-badge.absent {
+  background: #f8d7da;
+  color: #721c24;
+}
+.status-badge.leave {
+  background: #fff3cd;
+  color: #856404;
+} */
+
+
+
+.attendance-container {
+  padding: 20px;
+  background-color: #f5f6fa;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.attendance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.attendance-top-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.attendance-top-controls select,
+.attendance-top-controls input[type="date"] {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.attendance-table th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+.att-btn {
+  margin-right: 6px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.att-btn.active {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.att-btn.present {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.att-btn.absent {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.att-btn.leave {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.status-badge.present {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.absent {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.status-badge.leave {
+  background-color: #fff9c4;
+  color: #78350f;
+}
+
+.save-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: #fff;
+  cursor: pointer;
+}
+
+.save-message {
+  margin-top: 8px;
+  font-weight: 600;
+}
+

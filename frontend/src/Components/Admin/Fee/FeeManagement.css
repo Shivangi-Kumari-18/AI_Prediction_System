@@ -1,0 +1,194 @@
+.fee-management {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.fee-management h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.fee-cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.fee-card {
+  flex: 1;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.fee-search {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 0 20px auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.fee-table-container {
+  overflow-x: auto;
+}
+
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.fee-table th,
+.fee-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.fee-table th {
+  background: #f1f1f1;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  color: white;
+}
+
+.status.Up-to-date {
+  background: #27ae60;
+}
+.status.Pending {
+  background: #f1c40f;
+}
+.status.Overdue {
+  background: #e74c3c;
+}
+
+.payment-form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.payment-form h3 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.payment-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-form input,
+.payment-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.payment-form button {
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.payment-form button:hover {
+  background: #357abd;
+}
+.fee-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-btn {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.history-btn:hover {
+  background: #357abd;
+}
+
+/* Modal Styling */
+.history-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.history-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 70%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.history-table th, .history-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.history-table th {
+  background: #f0f0f0;
+}
+
+.close-btn {
+  margin-top: 15px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background: #c0392b;
+}
+.history-table-container {
+  max-height: 300px;   /* scroll ka height limit */
+  overflow-y: auto;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+

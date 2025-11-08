@@ -1,0 +1,55 @@
+.manage-students {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+    max-width: 1200px; /* max width page ke liye */
+  margin: 0 auto; 
+}
+
+.stcards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stcard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.stcard:hover {
+  transform: translateY(-5px);
+  background: #f9fafc;
+}
+
+.students-list {
+  margin-top: 20px;
+  max-height: 450px; /* 👈 scrollable */
+  overflow-y: auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.students-table th {
+  background: #f4f6f9;
+  font-weight: bold;
+}
+

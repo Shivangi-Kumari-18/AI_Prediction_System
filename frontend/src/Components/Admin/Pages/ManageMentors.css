@@ -1,0 +1,47 @@
+.manage-mentors {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.mcards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.mcard {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex: 1;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.mcard:hover {
+  transform: translateY(-5px);
+  background: #f9fafc;
+}
+
+.mentors-list {
+  margin-top: 20px;
+  max-height: 450px; /* 👈 jitna height chahiye utna set karo */
+  overflow-y: auto;  
+}
+
+.mentors-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mentors-table th,
+.mentors-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.mentors-table th {
+  background: #f4f6f9;
+}

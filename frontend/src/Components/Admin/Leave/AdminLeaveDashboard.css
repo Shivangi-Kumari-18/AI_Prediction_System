@@ -1,0 +1,161 @@
+/* Container */
+.admin-leave-requests-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.admin-dashboard-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* No Requests Text */
+.no-requests-text {
+  text-align: center;
+  font-size: 1rem;
+  color: #7f8c8d;
+  padding: 25px 0;
+}
+
+/* Table Wrapper */
+.admin-table-wrapper {
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Table */
+.admin-leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 800px;
+}
+
+/* Header Row */
+.admin-table-header-row {
+  background-color: #34495e;
+  color: #ffffff;
+}
+
+.admin-table-header-cell {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Table Rows */
+.admin-table-row {
+  transition: background 0.2s ease;
+}
+
+.row-even {
+  background-color: #f9f9f9;
+}
+
+.row-odd {
+  background-color: #ffffff;
+}
+
+.admin-table-row:hover {
+  background-color: #ecf0f1;
+}
+
+/* Table Cells */
+.admin-table-cell {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+/* Status Badge */
+.admin-status-cell {
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 12px;
+  display: inline-block;
+  min-width: 80px;
+}
+
+.status-approved {
+  color: #27ae60;  
+  background-color: #e9f8f2;
+}
+
+.status-denied {
+  color: #e74c3c; 
+  background-color: #fde9e9;
+}
+
+.status-pending {
+  color: #f39c12; 
+  background-color: #fdf2e9;
+}
+
+/* Action Buttons */
+.admin-action-cell button {
+  padding: 6px 14px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-approve {
+  background-color: #27ae60;
+  color: white;
+}
+
+.btn-approve:hover {
+  background-color: #1e8449;
+}
+
+.btn-deny {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-deny:hover {
+  background-color: #c0392b;
+}
+/* Status Badge - Centered */
+.admin-status-cell {
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 12px;
+  display: flex;            /* flex use karenge */
+  align-items: center;      /* vertical center */
+  justify-content: center;  /* horizontal center */
+  min-width: 80px;
+  height: 36px;             /* consistent height */
+  text-align: center;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .admin-leave-table {
+    font-size: 0.9rem;
+  }
+  .admin-table-header-cell, .admin-table-cell {
+    padding: 10px 12px;
+  }
+}
+
+
+

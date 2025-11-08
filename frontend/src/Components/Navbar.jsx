@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useAuth } from "../context/AuthContext";
-import Login from "./pages/Login"; // 👈 Login component import
-import SignUp from "./pages/SignUp";
+import Login from "../Components/pages/Authentication/Login"; // 👈 Login component import
+import SignUp from "../Components/pages/Authentication/SignUp";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     logout();
-    navigate("/login", { replace: true });
+    navigate("/home", { replace: true });
   };
 
   return (
@@ -24,34 +24,44 @@ const Navbar = () => {
             className="navbar-logo"
             onClick={() => navigate(isAuthenticated ? "/home" : "/login")}
           >
-            AI<span>Prediction</span>
+            {/* AI<span>Prediction</span> */}
+           Node <span>Link</span> 
+           {/* <img src="NodeLink.jpg" alt="Logo" className="logo-image" /> */}
           </div>
 
           {/* Desktop Menu */}
           <ul className="navbar-menu">
+            {/* Common Links (always visible) */}
+            <li>
+              <NavLink to="/home" className="navbar-link">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/features" className="navbar-link">
+                Features
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/about" className="navbar-link">
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" className="navbar-link">
+                Contact
+              </NavLink>
+            </li>
+
+            {/* Auth based Links */}
             {isAuthenticated ? (
               <>
                 <li>
-                  <NavLink to="/home" className="navbar-link">
-                    Home
+                  <NavLink to="/dashboard" className="navbar-link">
+                    Dashboard
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="/features" className="navbar-link">
-                    Features
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/about" className="navbar-link">
-                    About
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/contact" className="navbar-link">
-                    Contact
-                  </NavLink>
-                </li>
-                <li>
+                {/* <li>
                   <button
                     type="button"
                     className="navbar-login"
@@ -59,11 +69,11 @@ const Navbar = () => {
                   >
                     Logout
                   </button>
-                </li>
+                </li> */}
               </>
             ) : (
               <>
-                <li>
+                {/* <li>
                   <NavLink to="/login" className="navbar-link">
                     Login
                   </NavLink>
@@ -72,7 +82,7 @@ const Navbar = () => {
                   <NavLink to="/signup" className="navbar-link">
                     Sign Up
                   </NavLink>
-                </li>
+                </li> */}
               </>
             )}
           </ul>
@@ -95,6 +105,15 @@ const Navbar = () => {
         <ul className="mobile-menu-list">
           {isAuthenticated ? (
             <>
+              <li>
+                <NavLink
+                  to="/dashboard"
+                  className="mobile-menu-link"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  DashBoard
+                </NavLink>
+              </li>
               <li>
                 <NavLink
                   to="/home"

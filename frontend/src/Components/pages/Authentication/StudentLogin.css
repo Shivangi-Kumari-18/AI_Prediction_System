@@ -1,0 +1,90 @@
+.student-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: linear-gradient(135deg, #667eea, #764ba2); /* Soft purple-pink gradient */
+  padding: 20px;
+}
+
+.student-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.student-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.student-icon {
+  font-size: 3rem;
+  color: #764ba2; /* Match gradient */
+  margin-bottom: 10px;
+}
+
+.student-card h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group .input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #764ba2; /* Icon color matches theme */
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 12px 12px 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #764ba2; /* Focus color */
+}
+
+.btn-slogin {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb); /* Button gradient */
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-slogin:hover {
+  background: linear-gradient(135deg, #fbc2eb, #a18cd1); /* Hover gradient */
+  transform: translateY(-2px);
+}
+

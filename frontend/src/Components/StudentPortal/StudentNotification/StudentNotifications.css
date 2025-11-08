@@ -1,0 +1,63 @@
+.notifications-list {
+  max-width: 700px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.notifications-list h2 {
+  margin-bottom: 16px;
+  color:black; 
+}
+
+.notifications-list ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notification {
+  padding: 16px 20px;
+  border-radius: 12px;
+  color: #fff; /* Default text white */
+  font-weight: 500;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, max-height 0.3s ease;
+}
+
+/* Hover effect */
+.notification:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(0,0,0,0.15);
+}
+
+/* Message & Details both white */
+.notification .message,
+.notification .details {
+  color: #fff; /* strictly white */
+  line-height: 1.5;
+}
+
+/* Notification types with readable gradients */
+.notification.info {
+  background: linear-gradient(135deg, #5dade2, #2980b9);
+}
+
+.notification.warning {
+  background: linear-gradient(135deg, #f7b733, #f39c12);
+}
+
+.notification.alert {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.notification.counselling {
+  background: linear-gradient(135deg, #58d68d, #27ae60);
+}
+
+.no-notifications {
+  color: #ccc;
+  font-style: italic;
+}

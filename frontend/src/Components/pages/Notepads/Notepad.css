@@ -1,0 +1,87 @@
+.notepad-container {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff8dc;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Courier New", monospace;
+  position: relative;
+}
+
+.notepad-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 300px;
+  padding: 20px 15px;
+  background: repeating-linear-gradient(
+    white 0px,
+    white 29px,
+    #d3d3d3 30px
+  ); 
+  line-height: 30px;
+  border: none;
+  border-radius: 5px;
+  resize: vertical;
+  font-size: 16px;
+  font-family: "Courier New", monospace;
+  box-sizing: border-box;
+  color: #333;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #888;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #f4c542; /* sticky note yellow */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #e3b12e;
+}
+
+.notes-list {
+  margin-top: 25px;
+}
+
+.notes-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notes-list li {
+  background: #fff8dc;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-left: 4px solid #f4c542;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.5;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.notes-list button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background: #ff6961;
+  color: white;
+  border-radius: 5px;
+}
+
+.notes-list button:hover {
+  background: #e65b53;
+}

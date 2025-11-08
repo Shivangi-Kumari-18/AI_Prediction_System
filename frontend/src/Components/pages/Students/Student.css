@@ -1,0 +1,75 @@
+.student-table-container {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.student-table th,
+.student-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.student-table th {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.student-table tr:hover {
+  background: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Risk Badges */
+.badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.badge-high {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.badge-moderate {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.badge-low {
+  background: #d4edda;
+  color: #155724;
+}
+
+.badge-na {
+  background: #e2e3e5;
+  color: #6c757d;
+}
+.search-container {
+  margin: 15px 0;
+  text-align: right;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 250px;
+}
+
+
+
+

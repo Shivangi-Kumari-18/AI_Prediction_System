@@ -1,0 +1,96 @@
+.student-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background: #f9fafb;
+}
+
+/* Common card style (same for all boxes) */
+.detail-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Student Info Card - same size as other cards */
+.student-info {
+  max-width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Section titles */
+.detail-card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+}
+
+/* Assignments table */
+.assignments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.assignments-table th,
+.assignments-table td {
+  padding: 6px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.assignments-table th {
+  color: #666;
+  font-weight: 500;
+}
+
+.assignments-table td.status-pending {
+  color: #f44336;
+  font-weight: 600;
+}
+
+.assignments-table td.status-complete {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+/* Counseling button */
+.counseling-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.counseling-btn.marked {
+  background-color: #4caf50; /* green */
+  cursor: default;
+}
+
+/* .counseling-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  border: none;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 14px;
+} */
+
+.counseling-btn:hover {
+  background: #0056b3;
+}
